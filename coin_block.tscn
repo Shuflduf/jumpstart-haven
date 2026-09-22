@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://c2ywp8rx625b3"]
+
+[ext_resource type="Texture2D" uid="uid://7mfcys3oyoqn" path="res://tilemap.png" id="1_30kr3"]
+[ext_resource type="Script" uid="uid://dp3xo0hgc8had" path="res://coin_block.gd" id="1_tmajm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvcmw"]
+atlas = ExtResource("1_30kr3")
+region = Rect2(209, 19, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmajm"]
+atlas = ExtResource("1_30kr3")
+region = Rect2(209, 0, 18, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvcmw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_30kr3"]
+size = Vector2(20, 2)
+
+[node name="CoinBlock" type="StaticBody2D" unique_id=1372516457]
+script = ExtResource("1_tmajm")
+done_tex = SubResource("AtlasTexture_rvcmw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=716215534]
+texture = SubResource("AtlasTexture_tmajm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=74579752]
+shape = SubResource("RectangleShape2D_rvcmw")
+
+[node name="PlayerDet" type="Area2D" parent="." unique_id=1195296583]
+position = Vector2(0, 1)
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDet" unique_id=337193575]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_30kr3")

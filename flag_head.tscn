@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://byb5dbygcaemw"]
+
+[ext_resource type="Texture2D" uid="uid://7mfcys3oyoqn" path="res://tilemap.png" id="1_rg648"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pndfu"]
+atlas = ExtResource("1_rg648")
+region = Rect2(209, 95, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gk1nx"]
+atlas = ExtResource("1_rg648")
+region = Rect2(228, 95, 18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rvcmw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pndfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gk1nx")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="FlagHead" type="AnimatedSprite2D" unique_id=583284599]
+sprite_frames = SubResource("SpriteFrames_rvcmw")
+autoplay = "default"
+frame_progress = 0.15983622

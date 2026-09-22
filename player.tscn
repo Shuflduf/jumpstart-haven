@@ -50,6 +50,7 @@ animations = [{
 size = Vector2(20, 23)
 
 [node name="Player" type="CharacterBody2D" unique_id=1822379085]
+collision_layer = 4
 script = ExtResource("1_onrkg")
 
 [node name="Sprites" type="AnimatedSprite2D" parent="." unique_id=1450415253]
@@ -70,3 +71,12 @@ process_priority = 300
 process_physics_priority = 300
 script = ExtResource("3_i3pqv")
 metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="Coiner" type="Area2D" parent="." unique_id=1008117858]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coiner" unique_id=427027648]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_rvcmw")

@@ -5,8 +5,16 @@ const SPEED = 150.0
 const ACCELERATION = 30.0
 const JUMP_VELOCITY = -350.0
 @onready var sprites: AnimatedSprite2D = $Sprites
+@onready var coiner: Area2D = $Coiner
 
 
+func _ready() -> void:
+	coiner.body_entered.connect(_on_body_entered)
+
+
+func _on_body_entered(body: Node2D):
+	body.queue_free()
+	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
