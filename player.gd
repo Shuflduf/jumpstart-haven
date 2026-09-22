@@ -24,7 +24,9 @@ func _physics_process(delta: float) -> void:
 
 func handle_anim():
 	if is_on_floor():
+		
 		if abs(velocity.x) > 0.1:
+			sprites.flip_h = velocity.x > 0.0
 			sprites.play(&"walk")
 		else:
 			sprites.play(&"idle")
